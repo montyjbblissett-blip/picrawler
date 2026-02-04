@@ -1,0 +1,17 @@
+What I am making:
+I’m assembling a SunFounder PiCrawler. I’m preparing the hardware and using it to learn how to code complex robot functions. I’m adding an IMU (MPU-6050) and IR sensors so my robot has more “senses” and can be controlled by more complex scripts. 
+
+Why am I making this?
+I’m making this because I want to see how far I can push this hardware. Instead of using the basic movement functions, I want to learn how to code my robot so it:
+- Performs custom functions: How can I code my robot so it responds to things in a room?
+- Uses sensors: How can I code my robot so it uses information from the MPU-6050 and IR sensors to change how it moves?
+- Uses hardware: How can I code my robot so it uses all these pieces at once?
+
+What materials and tools are needed for my project?
+I need:
+- SunFounder PiCrawler Kit: My robot hardware
+- MPU-6050: Gives my robot a sense of movement and orientation
+- IR Sensor modules: Gives my robot extra “senses” so it can see the floor
+
+What are my next steps?
+I will continue researching how I can use the PiCrawler’s Python library of premade code in my upgrades. After that, I will submit my blueprint.
