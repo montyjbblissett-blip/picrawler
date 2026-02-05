@@ -1,0 +1,37 @@
+from picrawler import Picrawler
+from robot_hat import ADC, Pin
+import time
+
+# Initialize the robot
+crawler = Picrawler([6, 11, 8, 7, 4, 9, 2, 3, 5, 10, 1, 12])
+
+# Setup our extra sensors (When they arrive!)
+# Using Digital Pins for the IR Cliff Sensors
+left_cliff = Pin("D0") 
+right_cliff = Pin("D1")
+
+def check_for_drop():
+    # If the sensor returns 1, it means no reflection (the floor is gone!)
+    if left_cliff.value() == 1 or right_cliff.value() == 1:
+        print("CLIFF DETECTED! Stopping...")
+        return True
+    return False
+
+def main():
+    print("Starting Autonomous Mode...")
+    try:
+        while True:
+            if check_for_drop():
+                # Safety first: stop and move back
+                crawler.stop()
+                crawler.do_step('backward', 80)
+                time.sleep(1)
+            else:
+                # No drop detected, keep exploring
+                crawler.do_step('forward', 90)
+                
+    except KeyboardInterrupt:
+        crawler.stop()
+
+if __name__ == "__main__":
+    main()
